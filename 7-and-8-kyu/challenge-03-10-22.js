@@ -17,3 +17,15 @@ function apple(x){
    return x*x > 1000 ? "It's hotter than the sun!!" :  'Help yourself to a honeycomb Yorkie for the glovebox.'
 }
 
+/* Task
+
+Given a list of digits, return the smallest number that could be formed from these digits, using the digits only once (ignore duplicates). */
+
+function minValue(values){
+    let unique = [...new Set(values)]; 
+    unique.sort((a,b) => a-b);
+    return parseInt(unique.join(''));
+}
+
+
+
