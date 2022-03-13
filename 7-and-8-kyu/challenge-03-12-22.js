@@ -38,3 +38,10 @@ function noBoringZeros(n) {
   }
   return n;
 }
+
+/* Write a function that checks if a given string (case insensitive) is a palindrome. */
+
+function isPalindrome(x) {
+  let reversed_string = x.toLowerCase().split('').reverse().join('')
+  return x.toLowerCase() == reversed_string
+}
