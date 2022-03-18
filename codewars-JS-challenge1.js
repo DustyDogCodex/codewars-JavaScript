@@ -82,9 +82,9 @@ Example: (Input --> Output)
 function isIsogram(str){
     const str_length = str.length;
     const str_array = str.toLowerCase().split('');
-    console.log(str_array);
+    
     const str_set = new Set(str_array)
-    console.log(str_set);
+    
     const unique_items = str_set.size;
     if (str_length == unique_items){
       return true;
@@ -115,13 +115,12 @@ function rowSumOddNumbers(n) {
   for (let i =0; i <= n; i++) {
     sum_Indexes += i;
   }
-  console.log(sum_Indexes);
   
   let last_num_in_row = (2*sum_Indexes) - 1;
-  console.log(last_num_in_row);
+  
   //diff between first and last number in a row is (n-1)*2
   let first_num_in_row = last_num_in_row - ((n-1)*2);
-  console.log(first_num_in_row);
+  
   let sum = 0;
   //adding all odd numbers between first and last number
   for (let i = first_num_in_row; i <= last_num_in_row; i+=2){
