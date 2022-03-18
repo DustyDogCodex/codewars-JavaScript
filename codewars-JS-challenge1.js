@@ -71,4 +71,63 @@ class SmallestIntegerFinder { // class was part of the given code not my additio
     }
   }
 
+/* An isogram is a word that has no repeating letters, consecutive or non-consecutive. Implement a function that determines whether a string that contains only letters is an isogram. Assume the empty string is an isogram. Ignore letter case.
+
+Example: (Input --> Output)
+  
+"Dermatoglyphics" --> true
+"aba" --> false
+"moOse" --> false (ignore letter case) */
+  
+function isIsogram(str){
+    const str_length = str.length;
+    const str_array = str.toLowerCase().split('');
+    console.log(str_array);
+    const str_set = new Set(str_array)
+    console.log(str_set);
+    const unique_items = str_set.size;
+    if (str_length == unique_items){
+      return true;
+    } else {
+      return false;
+    }
+}  
+
+/* Given the triangle of consecutive odd numbers:
+
+             1
+          3     5
+       7     9    11
+   13    15    17    19
+21    23    25    27    29
+...
+
+Calculate the sum of the numbers in the nth row of this triangle (starting at index 1) e.g.: (Input --> Output)
+
+1 -->  1
+2 --> 3 + 5 = 8
+ */
+
+function rowSumOddNumbers(n) {
+	//total number of prime numbers is the sum of the indexes
+  //the answer is the sum of the numbers in the nth row (last n numbers in nth index)
+  let sum_Indexes = 0;
+  for (let i =0; i <= n; i++) {
+    sum_Indexes += i;
+  }
+  console.log(sum_Indexes);
+  
+  let last_num_in_row = (2*sum_Indexes) - 1;
+  console.log(last_num_in_row);
+  //diff between first and last number in a row is (n-1)*2
+  let first_num_in_row = last_num_in_row - ((n-1)*2);
+  console.log(first_num_in_row);
+  let sum = 0;
+  //adding all odd numbers between first and last number
+  for (let i = first_num_in_row; i <= last_num_in_row; i+=2){
+      sum += i;
+  }
+  return sum;  
+}
+
 
