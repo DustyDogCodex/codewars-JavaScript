@@ -92,3 +92,37 @@ function flattenAndSort(array) {
     }
     return final_array.sort(sortNumbers);
 }
+
+/* Your task is to make function, which returns the sum of a sequence of integers.
+
+The sequence is defined by 3 non-negative values: begin, end, step (inclusive).
+
+If begin value is greater than the end, function should returns 0
+
+Examples
+
+2,2,2 --> 2
+2,6,2 --> 12 (2 + 4 + 6)
+1,5,1 --> 15 (1 + 2 + 3 + 4 + 5)
+1,5,3  --> 5 (1 + 4)
+ */
+
+const sequenceSum = (begin, end, step) => {
+  // May the Force be with you
+  let sum = 0;
+  for (let i = begin; i <=end; i+= step){
+    sum += i;
+  }
+  return sum
+};
+
+/* Implement a function that accepts 3 integer values a, b, c. The function should return true if a triangle can be built with the sides of given length and false in any other case.
+
+(In this case, all triangles must have surface greater than 0 to be accepted). */
+
+function isTriangle(a,b,c){
+  if ((a+b>c) && (b+c>a) && (a+c>b)) {
+    return true;
+  }
+  return false;
+}
