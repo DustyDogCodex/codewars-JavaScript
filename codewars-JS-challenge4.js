@@ -164,3 +164,95 @@ function descendingOrder(n){
     const new_num = split_num.join('');
     return Number(new_num);
 }
+
+/* A square of squares
+You like building blocks. You especially like building blocks that are squares. And what you even like more, is to arrange them into a square of square building blocks!
+
+However, sometimes, you can't arrange them into a square. Instead, you end up with an ordinary rectangle! Those blasted things! If you just had a way to know, whether you're currently working in vain… Wait! That's it! You just have to check if your number of building blocks is a perfect square.
+
+Task
+Given an integral number, determine if it's a square number:
+
+In mathematics, a square number or perfect square is an integer that is the square of an integer; in other words, it is the product of some integer with itself.
+
+The tests will always use some integral number, so don't worry about that in dynamic typed languages.
+
+Examples
+-1  =>  false
+ 0  =>  true
+ 3  =>  false
+ 4  =>  true
+25  =>  true
+26  =>  false */
+
+var isSquare = function(n){
+  if (Number.isInteger(n ** (1/2))) {
+    return true;
+  }
+  return false;
+}
+
+/* Make a program that filters a list of strings and returns a list with only your friends name in it.
+
+If a name has exactly 4 letters in it, you can be sure that it has to be a friend of yours! Otherwise, you can be sure he's not...
+
+Ex: Input = ["Ryan", "Kieran", "Jason", "Yous"], Output = ["Ryan", "Yous"]
+
+i.e.
+
+friend ["Ryan", "Kieran", "Mark"] `shouldBe` ["Ryan", "Mark"]
+Note: keep the original order of the names in the output. */
+
+function friend(friends){
+  //your code here
+  const real_friends = [];
+  friends.forEach( friend => {
+    if (friend.length === 4) {
+      real_friends.push(friend);
+    }
+  })
+  return real_friends;
+}
+
+/* Count the number of divisors of a positive integer n.
+
+Random tests go up to n = 500000.
+
+Examples (input --> output)
+4 --> 3 (1, 2, 4)
+5 --> 2 (1, 5)
+12 --> 6 (1, 2, 3, 4, 6, 12)
+30 --> 8 (1, 2, 3, 5, 6, 10, 15, 30) */
+
+function getDivisorsCnt(n){
+
+  const divisors_array = [];
+  for (let i = 0; i <= n; i++)
+    if (n%i == 0){
+      divisors_array.push(i);
+    }
+  return divisors_array.length;
+}
+
+/* Given a sequence of numbers, find the largest pair sum in the sequence.
+
+For example
+
+[10, 14, 2, 23, 19] -->  42 (= 23 + 19)
+[99, 2, 2, 23, 19]  --> 122 (= 99 + 23)
+Input sequence contains minimum two elements and every element is an integer. */
+
+function largestPairSum (numbers) {
+  //TODO: Write your Code here
+  // sort array in descending order and then summing the first 2 elements
+  numbers.sort((a, b) => {
+    if (a > b) {
+      return -1;
+    }
+    if (a < b) {
+      return 1;
+    }
+    return 0;
+  });
+  return numbers[0] + numbers[1];
+}
