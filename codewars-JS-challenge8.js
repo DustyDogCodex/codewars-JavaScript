@@ -50,3 +50,31 @@ class FileNameExtractor {
     
     }
 }
+
+/* Write a function that takes in a binary string and returns the equivalent decoded text (the text is ASCII encoded).
+
+Each 8 bits on the binary string represent 1 character on the ASCII table.
+
+The input string will always be a valid binary string.
+
+Characters can be in the range from "00000000" to "11111111" (inclusive)
+
+Note: In the case of an empty binary string your function should return an empty string. */
+
+
+function binaryToString(binary) {
+  const bit_array = []
+  const char_array = []
+  //slice all 8-bit strings into an array 
+  for(let i = 0; i < binary.length; i+=8){
+      bit_array.push(binary.slice(i,i+8))
+  }
+  //convert every bit into its ASCII character and push it into char_array
+  bit_array.forEach(bit => {
+    char_array.push(String.fromCharCode(parseInt(bit,2)))
+  })
+  //join characters together to return final array
+  return char_array.join('') 
+}
+
+console.log(binaryToString('01001011010101000100100001011000010000100101100101000101'))
