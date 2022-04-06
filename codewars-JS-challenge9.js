@@ -14,7 +14,6 @@ function simpleTransposition(text) {
   let row1 = ''
   let row2 = ''
   let string = text.split('')
-  console.log(string)
   string.forEach((letter,index) => {
     if (index % 2 == 0){
       row1 += letter
@@ -22,8 +21,6 @@ function simpleTransposition(text) {
       row2 += letter
     }
   })
-  console.log(row1)
-  console.log(row2)
   return row1 + row2
 }
 
