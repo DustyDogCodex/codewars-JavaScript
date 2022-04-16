@@ -56,3 +56,26 @@ function longest(s1, s2) {
   return final_word
 }
 
+/* Given a string, you have to return a string in which each character (case-sensitive) is repeated once.
+Examples (Input -> Output):
+
+* "String"      -> "SSttrriinngg"
+* "Hello World" -> "HHeelllloo  WWoorrlldd"
+* "1234!_ "     -> "11223344!!__  "
+
+Good Luck! */
+
+function doubleChar(str) {
+  // Your code here
+  let final_str = ''
+  let str_array = str.split('')
+  str_array.forEach(letter => {
+    final_str += letter + letter
+  })
+  return final_str
+}
+
+
+
+
+
