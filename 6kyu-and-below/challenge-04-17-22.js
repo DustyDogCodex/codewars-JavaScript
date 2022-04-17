@@ -13,3 +13,10 @@ function squareDigits(num){
   })
   return Number(final_string);
 }
+
+/* Write a function which converts the input string to uppercase. */
+
+function makeUpperCase(str) {
+  // Code here
+  return str.toUpperCase()
+}
