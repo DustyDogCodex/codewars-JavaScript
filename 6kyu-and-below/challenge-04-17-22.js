@@ -28,3 +28,24 @@ For example:
 [1, 2, 3] --> [2, 4, 6] */
 
 const maps = x => x.map(num => num *2)
+
+/* Your function takes two arguments:
+
+    current father's age (years)
+    current age of his son (years)
+
+Сalculate how many years ago the father was twice as old as his son (or in how many years he will be twice as old). */
+
+function twiceAsOld(dadYearsOld, sonYearsOld) {
+  // your code here
+  let starting_age = (dadYearsOld - sonYearsOld)
+  let req_age = 0
+  let age = 0
+  for(let dads_age = starting_age; dads_age <= 100; dads_age++){ //
+    if(dads_age == 2*age){
+      req_age = dads_age
+    }
+    age++
+  }
+  return (req_age - dadYearsOld) < 0 ? -(req_age - dadYearsOld) : (req_age - dadYearsOld)
+}
