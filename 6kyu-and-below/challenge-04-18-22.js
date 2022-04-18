@@ -45,3 +45,28 @@ The test cases contain numbers only by mistake. */
 
 correct = s => s.replace(/0/g,'O').replace(/1/g,'I').replace(/5/g,'S')
 
+/* Complete the solution so that the function will break up camel casing, using a space between words.
+Example
+
+"camelCasing"  =>  "camel Casing"
+"identifier"   =>  "identifier"
+""             =>  "" */
+
+function solution(string) {
+  const regex = /[A-Z]/g
+  const cap_letters = string.match(regex)
+  const letter_array = string.split('')
+  const final_array = []
+  if (cap_letters == null){
+     return string 
+  }
+  letter_array.forEach((word,index) => {
+    if(cap_letters.includes(word)){
+      final_array.push(' ')
+      final_array.push(word)
+    } else {
+      final_array.push(word)
+    }
+  })
+  return final_array.join('')
+}
