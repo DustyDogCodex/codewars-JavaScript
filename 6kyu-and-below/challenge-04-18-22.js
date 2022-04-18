@@ -70,3 +70,23 @@ function solution(string) {
   })
   return final_array.join('')
 }
+
+/* You will be given a vector of strings. You must sort it alphabetically (case-sensitive, and based on the ASCII values of the chars) and then return the first value.
+
+The returned value must be a string, and have "***" between each of its letters.
+
+You should not remove or add elements from/to the array. */
+
+function twoSort(s) {
+  const sorted_array = s.sort()
+  const str = sorted_array[0].split('')
+  let final_str = ''
+  str.forEach((letter,index) => {
+    if(index == 0){
+      final_str += letter
+    } else {
+      final_str += '***' + letter
+    }
+  })
+  return final_str
+}
