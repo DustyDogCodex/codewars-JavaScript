@@ -19,3 +19,29 @@ function gooseFilter (birds) {
   var geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
   return birds.filter(b => !geese.includes(b));
 };
+
+/* Write Number in Expanded Form
+
+You will be given a number and you will need to return it as a string in Expanded Form. For example:
+
+expandedForm(12); // Should return '10 + 2'
+expandedForm(42); // Should return '40 + 2'
+expandedForm(70304); // Should return '70000 + 300 + 4'
+
+NOTE: All numbers will be whole numbers greater than 0. */
+
+function expandedForm(num) {
+  // Your code here
+  const num_array = num.toString().split('')
+  let str = ''
+  num_array.forEach((num,index) => {
+    if(index == 0){
+      str += Number(num) * (10**(num_array.length - index - 1))
+    } else if(num == 0){
+      str = str
+    } else {
+      str += " + " + (Number(num) * (10**(num_array.length - index - 1)))
+    }
+  })
+  return str
+}
