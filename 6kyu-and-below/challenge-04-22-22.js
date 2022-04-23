@@ -51,3 +51,35 @@ function cockroachSpeed(s) {
   //Good Luck!
   return Math.floor((s*1000*100)/3600)
 }
+
+/* Input:
+An integer array of length 0 < arr < 1000. The numbers in the array can be any integer positive or negative.
+
+Output:
+The lowest index N where the side to the left of N is equal to the side to the right of N. If you do not find an index that fits these rules, then you will return -1.
+
+For example:
+
+Let's say you are given the array {1,2,3,4,3,2,1}:
+Your function will return the index 3, because at the 3rd position of the array, the sum of left side of the index ({1,2,3}) and the sum of the right side of the index ({3,2,1}) both equal 6.
+
+ */
+
+function findEvenIndex(arr)
+{
+  let ind = -1
+  arr.forEach((num,index) => {
+    let sum1 = 0
+    let sum2 = 0
+    for(let i = 0; i < index; i++){
+      sum1 += arr[i]
+    }
+    for(let z = index+1; z < arr.length; z++){
+      sum2 += arr[z]
+    }
+    if(sum1 == sum2){
+      ind = index  
+    }
+  })
+  return ind
+}
