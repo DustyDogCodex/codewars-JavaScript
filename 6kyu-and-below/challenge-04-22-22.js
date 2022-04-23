@@ -83,3 +83,36 @@ function findEvenIndex(arr)
   })
   return ind
 }
+
+/* Write a function called repeatStr which repeats the given string string exactly n times.
+
+repeatStr(6, "I") // "IIIIII"
+repeatStr(5, "Hello") // "HelloHelloHelloHelloHello" */
+
+function repeatStr (n, s) {
+  let final_str = ''
+  for(let i = 0; i < n; i++){
+    final_str += s
+  }
+  return final_str;
+}
+
+/* In this little assignment you are given a string of space separated numbers, and have to return the highest and lowest number.
+Examples
+
+highAndLow("1 2 3 4 5");  // return "5 1"
+highAndLow("1 2 -3 4 5"); // return "5 -3"
+highAndLow("1 9 3 4 -5"); // return "9 -5" */
+
+function highAndLow(numbers){
+  // ...
+  const number = numbers.split(' ')
+  const num_array = []
+  number.forEach(num => {
+    num_array.push(Number(num))
+  })
+  let hi = Math.max(...num_array)
+  let lo = Math.min(...num_array)
+  return `${hi} ${lo}`
+}
+
