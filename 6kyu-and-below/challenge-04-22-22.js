@@ -16,3 +16,24 @@ var max = function(list){
     list.sort((a,b) => {return b - a})
     return list[0];
 }
+
+/* Return the number (count) of vowels in the given string.
+
+We will consider a, e, i, o, u as vowels for this Kata (but not y).
+
+The input string will only consist of lower case letters and/or spaces. */
+
+function getCount(str) {
+  var vowelsCount = 0;
+  
+  // enter your majic here
+  const letter_array = str.split('')
+  const vowels = ['a','e','i','o','u']
+  letter_array.forEach(letter => {
+    if(vowels.includes(letter)){
+      vowelsCount++
+    }  
+  })
+  
+  return vowelsCount;
+}
