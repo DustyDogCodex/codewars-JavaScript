@@ -2,7 +2,7 @@
 
 This is a repo for my codewars JavaScript solutions. I will commit to this repo everyday!
 
-https://www.codewars.com/users/DustyDogCodex/badges/large
+<a href = 'https://www.codewars.com/users/DustyDogCodex/badges/large'><img src='https://www.codewars.com/users/DustyDogCodex/badges/large'></a>
 
 Milestones: 
 
