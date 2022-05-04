@@ -1,2 +1,13 @@
 # codewars-JavaScript
-a repo for my codewars JavaScript solutions. I intend to commit to this repo everyday.
+
+This is a repo for my codewars JavaScript solutions. I will commit to this repo everyday!
+
+https://www.codewars.com/users/DustyDogCodex/badges/large
+
+Milestones: 
+
+Started    - March 2022
+
+5kyu rank  - April 16 2022
+
+4kyu rank  - April 28 2022
