@@ -118,4 +118,12 @@ function stringClean(s){
   return s.replace(/[1234567890]/g, '')
 }
 
+/* Find the Average of all the numbers in a given array. */
+
+var findAverage = function (nums) {
+  // Code here
+  let sum = nums.reduce((prev,curr) => prev + curr, 0)
+  return sum / nums.length
+}
+
 
