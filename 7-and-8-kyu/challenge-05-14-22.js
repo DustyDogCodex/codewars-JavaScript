@@ -11,3 +11,25 @@ function dutyFree(normPrice, discount, hol){
   let saving = normPrice * discount/100
   return Math.floor(hol/saving)
 }
+
+/* Write a function named sumDigits which takes a number as input and returns the sum of the absolute value of each of the number's decimal digits.
+
+For example: (Input --> Output)
+
+10 --> 1
+99 --> 18
+-32 --> 5
+
+Let's assume that all numbers in the input will be integer values.
+ */
+
+function sumDigits(number) {
+  const digits = number.toString().split('')
+  let sum = 0
+  digits.forEach(num => {
+    if(!isNaN(num)){
+      sum += Number(num)
+    }
+  })
+  return sum
+}
