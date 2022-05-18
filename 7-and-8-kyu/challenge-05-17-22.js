@@ -26,3 +26,14 @@ function warnTheSheep(queue) {
   }
   return str
 }
+
+/* Write a function that returns a string in which firstname is swapped with last name.
+
+nameShuffler('john McClane'); => "McClane john" */
+
+function nameShuffler(str){
+  //Shuffle It
+  const name_splitter = str.split(' ')
+  return `${name_splitter[1]} ${name_splitter[0]}`
+}
+
