@@ -59,3 +59,23 @@ function getSize(width, height, depth){
   let volume = width * height * depth
   return [area,volume]
 }
+
+/* Complete the method which accepts an array of integers, and returns one of the following:
+
+    "yes, ascending" - if the numbers in the array are sorted in an ascending order
+    "yes, descending" - if the numbers in the array are sorted in a descending order
+    "no" - otherwise
+
+You can assume the array will always be valid, and there will always be one correct answer. */
+
+function isSortedAndHow(arr) {
+  let answer = ''
+  if(arr.every((x,i)=>i==0||arr[i]>=arr[i-1])){           //check to see if every index has the same number. This confirms the order of arrangement of this array
+    answer = 'yes, ascending'
+  } else if (arr.every((x,i)=>i==0||arr[i]<=arr[i-1])){
+    answer = 'yes, descending'
+  } else {
+    answer = 'no'
+  }
+  return answer
+}
