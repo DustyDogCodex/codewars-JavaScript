@@ -25,3 +25,13 @@ var isAnagram = function(test, original) {
  return (test.toLowerCase().split('').sort().join('') === original.toLowerCase().split('').sort().join(''));
 };
 
+/* Variable assignment
+
+Fix the variables assigments so that this code stores the string 'devLab' in the variable name.
+ */
+
+var a = "dev"
+var b = "Lab"
+
+var name = a + b
+
