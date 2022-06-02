@@ -28,54 +28,44 @@ validSolution([
 ]); // => false
  */
 
-function validSolution(board) {
-	let valid = true;
-	const testvaliditiy = (arr) => {
-		let set = new Set(arr);
-		if (arr.includes(0) || [...set].length !== 9) {
-			return false;
-		} else {
-			return true;
-		}
+function validSolution(board){
+	// check horizontal lines
+	for(var j=0; j<9; j++){
+	  if(!check(board[j])) return false;
 	}
-	for (i = 0; i < board.length; i++) {
-		if (!valid) break;
-		let row = []
-		for (j = 0; j < board.length; j++) {
-			row.push(board[i][j])
-		}
-		valid = testvaliditiy(row)
+	
+	// check vertical lines
+	for(var j=0; j<9; j++){
+	  var line = [];
+	  for(var k=0; k<9; k++){
+		line.push(board[k][j]);
+	  }
+	  if(!check(line)) return false;
 	}
-
-	//column testing
-	for (i = 0; i < board.length; i++) {
-		let col = []
-		for (j = 0; j < board.length; j++) {
-			col.push(board[j][i])
+	
+	// check 3x3 squares
+	for(var j=0; j<9; j+=3){
+	  for(var k=0; k<9; k+=3){
+		var square = [];
+		for(var l=j; l<j+3; l++){
+		  for(var m=k; m<k+3; m++){
+			square.push(board[l][m]);
+		  }
 		}
-		valid = testvaliditiy(col)
-		if (!valid) break;
+		if(!check(square)) return false;
+	  }
 	}
-
-	let row = 0;
-	let column = 0;
-	while (row < 9 && column < 9) {
-		let cube = []
-		for (i = row; i < row + 3; i++) {
-			for (j = column; j < column + 3; j++) {
-				cube.push(board[i][j])
-			}
-		}
-		row += 3
-		valid = testvaliditiy(cube)
-		if (!valid) break;
-		if (row == 9 && column != 9) {
-			column += 3
-			row = 0;
-		}
-	}
-	return valid
-}
+	
+	// if it hasn't returned false so far then we
+	// have a valid 9x9 square, so return true
+	return true;
+  }
+  
+  // checks that an array of length 9 contains 
+  // exactly the numbers 1, 2, ..., 9
+  function check(numbers){
+	return numbers.slice(0).sort().every(function(e, i){return e==i+1;});
+  }
 
 /* A format for expressing an ordered list of integers is to use a comma separated list of either
 
