@@ -76,3 +76,47 @@ function validSolution(board) {
 	}
 	return valid
 }
+
+/* A format for expressing an ordered list of integers is to use a comma separated list of either
+
+    individual integers
+    or a range of integers denoted by the starting integer separated from the end integer in the range by a dash, '-'. The range includes all integers in the interval including both endpoints. It is not considered a range unless it spans at least 3 numbers. For example "12,13,15-17"
+
+Complete the solution so that it takes a list of integers in increasing order and returns a correctly formatted string in the range format.
+
+Example:
+
+solution([-10, -9, -8, -6, -3, -2, -1, 0, 1, 3, 4, 5, 7, 8, 9, 10, 11, 14, 15, 17, 18, 19, 20]);
+// returns "-10--8,-6,-3-1,3-5,7-11,14,15,17-20" */
+
+function solution(a){
+
+    let AddSequenceToString = function (seq, s) {
+
+        if (s) { s += ','; }
+        s += (seq.length >= 3)? seq[0] + '-' + seq[seq.length - 1] : seq.join(',');
+        return s;
+    }
+
+    let sequence = [];
+    let s = '';
+
+    for (let i = 0; i < a.length; ++i) {
+
+        let n = a[i];
+
+        if (sequence.length == 0 || sequence[sequence.length - 1] == n - 1) { 
+
+            sequence.push(n);
+
+        } else {
+
+            s = AddSequenceToString(sequence, s);
+            sequence = [n];
+        }
+    }
+
+    s = AddSequenceToString(sequence, s);
+
+    return s;
+}
