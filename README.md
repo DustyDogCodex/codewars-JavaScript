@@ -12,6 +12,8 @@ Started    - March 2022
 
 4kyu rank  - April 28 2022
 
-3kyu       - ???????
+3kyu       - June 02 2022
+
+2kyu       - ????????????
 
 If you're reading this I hope you have a wonderful day!
