@@ -46,4 +46,11 @@ for(let i = 1; i <= 1000; i++){
   websites.push('codewars')
 }
 
+/* Find the total sum of internal angles (in degrees) in an n-sided simple polygon. N will be greater than 2. */
+
+function angle(n) {
+  //code here
+  return (2*n - 4) * 90
+}
+
 
