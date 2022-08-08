@@ -23,3 +23,72 @@ function  calculateAge(birthYear, relativeYear){
     return birthYear < relativeYear ? `You are ${relativeYear - birthYear} years old.` : `You will be born in ${birthYear - relativeYear} years.`
   }
 }
+
+/* Definition
+
+Balanced number is the number that * The sum of all digits to the left of the middle digit(s) and the sum of all digits to the right of the middle digit(s) are equal*.
+Task
+
+Given a number, Find if it is Balanced or not .
+Warm-up (Highly recommended)
+Playing With Numbers Series
+Notes
+
+    If the number has an odd number of digits then there is only one middle digit, e.g. 92645 has middle digit 6; otherwise, there are two middle digits , e.g. 1301 has middle digits 3 and 0
+
+    The middle digit(s) should not be considered when determining whether a number is balanced or not, e.g 413023 is a balanced number because the left sum and right sum are both 5.
+
+    Number passed is always Positive .
+
+    Return the result as String
+
+Input >> Output Examples
+
+(balanced-num 7) ==> return "Balanced"
+
+(balanced-num 295591) ==> return "Not Balanced"
+
+(balanced-num 959) ==> return "Balanced"
+
+(balanced-num 27102983) ==> return "Not Balanced" */
+
+function balancedNum(number)
+{
+  let num = number.toString()
+  let numLength 
+  let midpoint1
+  let midpoint2
+  let midpoint
+  const num_array = num.split('')
+  
+  if ((num.length % 2) == 0) {
+    numLength = 'even' 
+    midpoint1 = (num.length / 2) - 1
+    midpoint2 = midpoint1 + 1
+  }  else {
+    numLength = 'odd'
+    midpoint = Math.ceil(num.length/2) - 1
+  }
+  
+  if (numLength == 'even'){
+    let leftSum = 0
+    let rightSum = 0
+    for(let i = 0; i < midpoint1; i++){
+      leftSum += Number(num_array[i])
+    }
+    for(let j = midpoint2 + 1; j < num_array.length; j++){
+      rightSum += Number(num_array[j])
+    }
+    return leftSum == rightSum ? "Balanced" : "Not Balanced" 
+  } else {
+    let leftSum = 0
+    let rightSum = 0
+    for(let i = 0; i < midpoint; i++){
+      leftSum += Number(num_array[i])
+    }
+    for(let j = midpoint + 1; j < num_array.length; j++){
+      rightSum += Number(num_array[j])
+    }
+    return leftSum == rightSum ? "Balanced" : "Not Balanced"
+  }
+}
