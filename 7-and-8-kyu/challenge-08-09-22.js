@@ -12,7 +12,6 @@ If no occurrences can be found, a count of 0 should be returned.
  */
 
 function strCount(str, letter){  
-  //code here
   let count = 0
   let alphabet_array = str.split('')
   alphabet_array.forEach(val => {
