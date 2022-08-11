@@ -18,5 +18,18 @@ function f(n){
   return Number.isInteger(n) && n > 0 ? n * (n + 1) / 2 : false;
 };
 
+/* Define a function that removes duplicates from an array of numbers and returns it as a result.
+
+The order of the sequence has to stay the same. */
+
+function distinct(a) {
+  let final_array = []
+  a.forEach(item => {
+    if(final_array.includes(item) == false){
+      final_array.push(item)
+    }
+  })
+  return final_array;
+}
 
 
