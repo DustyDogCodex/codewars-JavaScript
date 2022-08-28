@@ -29,3 +29,4 @@ function disariumNumber(n){
   })
   return sum == n ? "Disarium !!" : "Not !!"
 }
+
