@@ -9,23 +9,21 @@ Examples
 
 */
 
-function highestRank(array){
-    if(array.length == 0)
-        return null;
-    let modeMap = {};
-    let maxEl = array[0], maxCount = 1;
-    for(let i = 0; i < array.length; i++)
-    {
-        let el = array[i];
-        if(modeMap[el] == null)
-            modeMap[el] = 1;
-        else
-            modeMap[el]++;  
-        if(modeMap[el] > maxCount)
-        {
-            maxEl = el;
-            maxCount = modeMap[el];
-        }
+function highestRank(arr){
+ 
+  let result = 0;
+  let y = 0;
+  
+  
+  for (i = 0; i < arr.length; i++) {
+    let x = 0;
+    for (j = i + 1; j < arr.length; j++) {
+      if (arr[i] === arr[j]) x += 1;
     }
-    return maxEl;
+    if (x > y) {
+      y = x;
+      result = arr[i];
+    }
+  }
+  return result;
 }
