@@ -22,3 +22,30 @@ function mxdiflg(a1, a2) {
   let l2 = a2.map(str => str.length)
   return Math.max(Math.max(...l1) - Math.min(...l2), Math.max(...l2) - Math.min(...l1))
 }
+
+/* Your task is simply to count the total number of lowercase letters in a string.
+Examples
+
+lowercaseCount("abc"); ===> 3
+
+lowercaseCount("abcABC123"); ===> 3
+
+lowercaseCount("abcABC123!@€£#$%^&*()_-+=}{[]|\':;?/>.<,~"); ===> 3
+
+lowercaseCount(""); ===> 0;
+
+lowercaseCount("ABC123!@€£#$%^&*()_-+=}{[]|\':;?/>.<,~"); ===> 0
+
+lowercaseCount("abcdefghijklmnopqrstuvwxyz"); ===> 26
+*/
+
+function lowercaseCount(str){
+    const char_array = str.split('')
+    let count = 0
+    char_array.forEach(char => {
+      if(char.charCodeAt(0) > 96 && char.charCodeAt(0) < 123){
+        count++
+      }
+    })
+    return count
+}
