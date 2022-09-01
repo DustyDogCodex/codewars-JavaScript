@@ -28,3 +28,21 @@ var findDigit = function(num, nth){
   num_array.reverse()
   return Number(num_array[nth-1])
 }
+
+/* Write function alternateCase which switch every letter in string from upper to lower and from lower to upper. E.g: Hello World -> hELLO wORLD. */
+
+function alternateCase(s) {
+  let new_str = ''
+  const str_array = s.split('')
+  str_array.forEach(char => {
+    if(char.charCodeAt(0) > 64 && char.charCodeAt(0) < 91){
+      new_str += char.toLowerCase()
+    } else if(char.charCodeAt(0) > 96 && char.charCodeAt(0) < 123){
+      new_str += char.toUpperCase()
+    } else {
+      new_str += char
+    }
+  })
+  return new_str;
+}
+
