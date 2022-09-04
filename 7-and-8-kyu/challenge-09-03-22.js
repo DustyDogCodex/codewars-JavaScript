@@ -11,3 +11,16 @@ function divCon(x){
   })
   return reg_num.reduce((a,b) => a + b, 0) - str_num.reduce((a,b) => +a + +b, 0)
 }
+
+/* This series of katas will introduce you to basics of doing geometry with computers.
+
+Point objects have x and y attributes (X and Y in C#) attributes.
+
+Write a function calculating distance between Point a and Point b.
+
+Tests round answers to 6 decimal places. */
+
+function distanceBetweenPoints(a, b) {
+  // your code here
+  return Math.sqrt(Math.abs(a.x - b.x) ** 2 + Math.abs(a.y - b.y) ** 2)
+}
