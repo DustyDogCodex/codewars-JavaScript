@@ -19,3 +19,12 @@ function multipleOfIndex(array) {
   return new_array
 }
 
+/* A Tidy number is a number whose digits are in non-decreasing order.
+Task
+
+Given a number, Find if it is Tidy or not . */
+
+function tidyNumber(n){
+  let arr = [...n.toString()].map(Number);
+  return arr.every((el, ind, arr) => !ind || el >= arr[ind - 1]);
+}
