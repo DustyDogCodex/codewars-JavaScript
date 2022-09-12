@@ -18,3 +18,4 @@ function multipleOfIndex(array) {
   })
   return new_array
 }
+
