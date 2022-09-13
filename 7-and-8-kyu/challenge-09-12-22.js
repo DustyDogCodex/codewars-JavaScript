@@ -18,3 +18,9 @@ remove("Hi") == "Hi"
 function remove (string) {
   return string[string.length -1] == '!' ? string.slice(0,string.length-1) : string;
 }
+
+/* Return the type of the sum of the two arguments. */
+
+function typeOfSum(a, b) {
+  return typeof (a+b)
+}
