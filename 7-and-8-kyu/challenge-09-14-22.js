@@ -37,5 +37,18 @@ function pairs(ar){
          count++;
       };
    };
-   return count;
+   return count;function maxTriSum(numbers){
+  const sorted= [...new Set(numbers.sort((a,b)=>b-a))]
+ return sorted[0]+sorted[1]+sorted[2]
+}
+}
+
+/* Task
+
+Given an array/list [] of n integers , find maximum triplet sum in the array Without duplications . */
+
+function maxTriSum(numbers){
+    numbers.sort((a, b) => b - a)
+    let arr = numbers.filter((x,y) => numbers.indexOf(x) === y)
+    return arr[0] + arr[1] + arr[2]
 }
