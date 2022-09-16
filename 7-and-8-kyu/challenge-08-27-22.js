@@ -12,3 +12,20 @@ function billboard(name, price = 30){
   })
   return total
 } 
+
+/* Definition
+
+Disarium number is the number that The sum of its digits powered with their respective positions is equal to the number itself.
+Task
+
+Given a number, Find if it is Disarium or not . */ 
+
+function disariumNumber(n){
+  //your code here
+  const digits_array = n.toString().split('')
+  let sum = 0
+  digits_array.forEach((digit, index) => {
+    sum += digit ** (index + 1)  
+  })
+  return sum == n ? "Disarium !!" : "Not !!"
+}
