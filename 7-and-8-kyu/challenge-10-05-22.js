@@ -61,3 +61,37 @@ function padIt(str,n){
   return left_side+str+right_side
 }
 
+/* Given a string, turn each character into its ASCII character code and join them together to create a number - let's call this number total1:
+
+'ABC' --> 'A' = 65, 'B' = 66, 'C' = 67 --> 656667
+
+Then replace any incidence of the number 7 with the number 1, and call this number 'total2':
+
+total1 = 656667
+              ^
+total2 = 656661
+              ^
+
+Then return the difference between the sum of the digits in total1 and total2:
+
+  (6 + 5 + 6 + 6 + 6 + 7)
+- (6 + 5 + 6 + 6 + 6 + 1)
+-------------------------
+                       6
+
+ */
+
+function calc(x){
+    const str_array = x.split('')
+    let total1 = ''
+    str_array.forEach(str => {
+        total1 += str.charCodeAt(0)
+    })
+    let total2 = total1.replaceAll('7',"1")
+    console.log(total1, total2)
+    let sum1 = total1.split('').reduce((prev,curr) => Number(prev) + Number(curr),0)
+    let sum2 = total2.split('').reduce((prev,curr) => Number(prev) + Number(curr),0)
+    console.log(sum1,sum2)
+    return sum1 - sum2 
+  }
+
