@@ -82,16 +82,16 @@ Then return the difference between the sum of the digits in total1 and total2:
  */
 
 function calc(x){
-    const str_array = x.split('')
-    let total1 = ''
-    str_array.forEach(str => {
-        total1 += str.charCodeAt(0)
-    })
-    let total2 = total1.replaceAll('7',"1")
-    console.log(total1, total2)
-    let sum1 = total1.split('').reduce((prev,curr) => Number(prev) + Number(curr),0)
-    let sum2 = total2.split('').reduce((prev,curr) => Number(prev) + Number(curr),0)
-    console.log(sum1,sum2)
-    return sum1 - sum2 
-  }
+  const str_array = x.split('')
+  let total1 = ''
+  str_array.forEach(str => {
+      total1 += str.charCodeAt(0)
+  })
+  let total2 = total1.replace(/7/g,"1")
+  console.log(total1, total2)
+  let sum1 = total1.split('').reduce((prev,curr) => Number(prev) + Number(curr),0)
+  let sum2 = total2.split('').reduce((prev,curr) => Number(prev) + Number(curr),0)
+  console.log(sum1,sum2)
+  return sum1 - sum2 
+}
 
