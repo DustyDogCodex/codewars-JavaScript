@@ -49,3 +49,13 @@ function removeRotten(bagOfFruits){
   ) : []
 }
 
+/* Modify the spacify function so that it returns the given string with spaces inserted between each character.
+
+spacify("hello world") // returns "h e l l o   w o r l d" */
+
+function spacify(str) {
+  // return 
+  const word_array = str.split(' ')
+  return word_array.map(word => word.split('').join(' ')).join('   ')
+}
+
